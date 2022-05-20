@@ -11,7 +11,21 @@
 <body>
   <main>
     <h1>Vanilla JavaScript App</h1>
+    <hr />
+    <hr />
+    <button onclick="managedFunc()">Get From Managed Function</button>
+    <button onclick="crossOriginFunc()">Get From Cross Origin</button>
   </main>
+
+  <script>
+    function managedFunc() {
+      await fetch('api/demo');
+    }
+
+    function crossOriginFunc() {
+      await fetch('https://cross-origin-cookie.azurewebsites.net/api/readcookie');
+    }
+  </script>
 </body>
 
 </html>
