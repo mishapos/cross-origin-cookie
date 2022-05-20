@@ -14,7 +14,7 @@ namespace Company.Function
     public static class demo
     {
         [FunctionName("demo")]
-        public static async Task<IActionResult> Run(
+        public static async Task<HttpResponseMessage> Run(
             [HttpTrigger(AuthorizationLevel.Anonymous, "get", "post", Route = null)] HttpRequest req,
             ILogger log)
         {
