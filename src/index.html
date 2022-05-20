@@ -18,11 +18,11 @@
   </main>
 
   <script>
-    function managedFunc() {
+    const managedFunc = async () => {
       await fetch('api/demo');
     }
 
-    function crossOriginFunc() {
+    const crossOriginFunc = async () => {
       await fetch('https://cross-origin-cookie.azurewebsites.net/api/readcookie');
     }
   </script>
