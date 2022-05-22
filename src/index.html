@@ -25,7 +25,8 @@
 
     const crossOriginFunc = async () => {
       await fetch('https://cross-origin-cookie.azurewebsites.net/api/readcookie', {
-        "credentials": "include"
+        "credentials": "include",
+        "mode": "cors"
       });
     }
 
