@@ -14,6 +14,7 @@
     <hr />
     <hr />
     <button onclick="managedFunc()">Get From Managed Function</button>
+    <button onclick="setCookie()">Get From Unconnected Func</button>
     <button onclick="crossOriginFunc()">Get From Cross Origin</button>
   </main>
 
@@ -26,6 +27,10 @@
       await fetch('https://cross-origin-cookie.azurewebsites.net/api/readcookie', {
         "credentials": "include"
       });
+    }
+
+    const setCookie = async () => {
+      await fetch('https://cookie-provider.azurewebsites.net/api/SetCookie');
     }
   </script>
 </body>
