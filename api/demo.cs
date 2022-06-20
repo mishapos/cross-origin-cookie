@@ -22,7 +22,7 @@ namespace Company.Function
 
             var response = new HttpResponseMessage();
             var guid = Guid.NewGuid().ToString();
-            var cookieValue = $"{guid};HttpOnly;Secure;Path=/;SameSite=None";
+            var cookieValue = $"{guid};HttpOnly;Secure;Path=/;SameSite=None;Domain=*.bakedpotatos.net;";
             response.Headers.Add("Set-Cookie", $"HeaderCookie={cookieValue}");
             return response;
         }
