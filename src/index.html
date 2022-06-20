@@ -24,12 +24,13 @@
     }
 
     const crossOriginFunc = async () => {
-      await fetch('https://cross-origin-cookie.azurewebsites.net/api/readcookie', {
+      var result = await fetch('https://cross-origin-cookie.azurewebsites.net/api/readcookie', {
         "credentials": "include",
         "mode": "cors",
         "method": "POST",
         "body": "Hello from VS Code"
       });
+      console.log(`CORS Result: ${result}`)
     }
 
     const setCookie = async () => {
