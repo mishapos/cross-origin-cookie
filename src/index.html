@@ -16,6 +16,7 @@
     <button onclick="managedFunc()">Get From Managed Function</button>
     <button onclick="setCookie()">Get From Unconnected Func</button>
     <button onclick="crossOriginFunc()">Get From Cross Origin</button>
+    <button onclick="readSameOrigin()">Read Cookie Same Origin</button>
   </main>
 
   <script>
@@ -35,6 +36,15 @@
 
     const setCookie = async () => {
       await fetch('https://cookie-provider.azurewebsites.net/api/SetCookie');
+    }
+
+    const readSameOrigin = async () => {
+      var result = await fetch('https://cookiereader.bakedpotatos.net/api/readcookie', {
+        "credentials": "include",
+        "method": "POST",
+        "body": "Hello from VS Code"
+      });
+      console.log(`CORS Result: ${JSON.stringify(result, null, 4)}`)
     }
   </script>
 </body>
